@@ -77,7 +77,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-4 shadow-md">
+        <div className="md:hidden bg-gradient-to-b from-4 to-blue-950 shadow-md">
           <ul className="flex flex-col items-center space-y-4 py-6">
             <li>
               <Link

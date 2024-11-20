@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { database, ref, push, onValue } from "../../backend/firebase";
+import ContactForm from "./contactForm";
 
 // Fungsi untuk memanggil AIMLAPI
 const fetchAIResponse = async (userMessage) => {
@@ -105,7 +106,7 @@ const Home = () => {
         className="w-screen h-screen flex flex-col lg:flex-row justify-evenly items-center bg-gradient-to-b from-4 to-3 text-white"
       >
         {/* Teks Utama */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start lg:ml-40 text-center lg:text-left px-4">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start lg:ml-40 text-center lg:text-left px-4 sm:mt-16 lg:mt-0">
           <h1 className="text-4xl sm:text-6xl lg:text-8xl font-extrabold leading-tight">
             Visual <br /> Studio
           </h1>
@@ -115,8 +116,8 @@ const Home = () => {
         </div>
 
         {/* Paragraf */}
-        <div className="w-full lg:w-1/2 px-8">
-          <p className="text-md sm:text-lg leading-relaxed max-w-lg text-justify mx-auto lg:mr-40">
+        <div className="w-full lg:w-1/2 px-8 max-h-60 overflow-y-hidden">
+          <p className="text-md sm:text-lg leading-relaxed max-w-md text-justify mx-auto lg:mr-40">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
             suscipit excepturi perspiciatis necessitatibus animi autem hic
             voluptate aperiam eum id fuga natus qui aliquid nemo tempora cumque
@@ -186,7 +187,7 @@ const Home = () => {
         id="product"
         className="w-screen py-20 px-6 bg-gradient-to-b from-4 to-3"
       >
-        <h2 className="text-4xl font-bold text-center mb-8 text-zinc-100">
+        <h2 className="text-4xl font-bold text-center mb-8 text-zinc-100 mt-24 sm:mt-16">
           Our Products
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -230,27 +231,7 @@ const Home = () => {
           data-aos="fade-up"
         >
           {/* Contact Form */}
-          <form className="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl mb-4 font-bold">Send us a message</h3>
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full mb-4 px-4 py-2 rounded bg-gray-700 text-white"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full mb-4 px-4 py-2 rounded bg-gray-700 text-white"
-            />
-            <textarea
-              placeholder="Your Message"
-              className="w-full mb-4 px-4 py-2 rounded bg-gray-700 text-white"
-              rows="5"
-            ></textarea>
-            <button className="bg-indigo-600 px-6 py-2 rounded hover:bg-indigo-800">
-              Send
-            </button>
-          </form>
+          <ContactForm />
 
           {/* Live Chat */}
           <div

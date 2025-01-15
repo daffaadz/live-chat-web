@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { database, ref, push, onValue } from "../../backend/firebase";
-import ContactForm from "./contactForm";
+import { database, ref, push, onValue } from "../../../backend/firebase";
+import ContactForm from "../../components/contactForm";
 
 // Fungsi untuk memanggil AIMLAPI
 const fetchAIResponse = async (userMessage) => {
@@ -108,10 +108,10 @@ const Home = () => {
         {/* Teks Utama */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start lg:ml-40 text-center lg:text-left px-4 sm:mt-16 lg:mt-0">
           <h1 className="text-4xl sm:text-6xl lg:text-8xl font-extrabold leading-tight">
-            Visual <br /> Studio
+            ADZ <br /> STORE
           </h1>
-          <p className="text-lg mt-4 lg:mt-6 max-w-md">
-            The ultimate code editor experience for developers worldwide.
+          <p className="text-lg mt-4 max-w-md">
+            The best store you ever see. Lorem ipsum dolor sit amet.
           </p>
         </div>
 
@@ -198,9 +198,7 @@ const Home = () => {
               data-aos="fade-up"
             >
               <img
-                src={`https://via.placeholder.com/300x200?text=Product+${
-                  i + 1
-                }`}
+                src={`https://placehold.co/600x400/png`}
                 alt={`Product ${i + 1}`}
                 className="w-full h-48 object-cover"
               />

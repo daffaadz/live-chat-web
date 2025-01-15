@@ -10,12 +10,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <div className="flex items-center lg:ml-36">
-          <img
-            src="./src/assets/no-bg-logo.png"
-            alt="my logo"
-            className="h-8 w-auto"
-          />
-          <h1 className="ml-2 font-bold text-neutral-100">Visual Studio</h1>
+          <h1 className="ml-2 font-bold text-neutral-100">Adz Store</h1>
         </div>
 
         {/* Desktop Menu */}

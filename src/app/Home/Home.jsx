@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { database, ref, push, onValue } from "../../../backend/firebase";
 import ContactForm from "../../components/contactForm";
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/Navbar";
 
 // Fungsi untuk memanggil AIMLAPI
 const fetchAIResponse = async (userMessage) => {

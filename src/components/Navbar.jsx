@@ -5,6 +5,15 @@ import { Link } from "react-scroll";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleLogout = () => {
+    const confirmLogout = window.confirm("Are you sure you want to log out?");
+  if (confirmLogout) {
+    localStorage.removeItem("userToken"); // Hapus token dari localStorage
+    window.alert("You have successfully logged out."); // Pesan setelah logout berhasil
+    window.location.href = "/"; // Kembali ke halaman login
+  }
+  };
+
   return (
     <nav className="w-screen fixed top-0 z-10 bg-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
@@ -15,7 +24,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 lg:mr-44">
-          <ul className="flex space-x-6 text-neutral-100">
+          <ul className="flex items-center space-x-6 text-neutral-100">
             <li>
               <Link
                 to="home"
@@ -55,6 +64,9 @@ const Navbar = () => {
               >
                 Contact
               </Link>
+            </li>
+            <li>
+              <button onClick={handleLogout} className="rounded-lg bg-red-500 hover:bg-red-700 hover:text-gray-200 px-2 py-[4px]">Log Out</button>
             </li>
           </ul>
         </div>
@@ -117,6 +129,9 @@ const Navbar = () => {
               >
                 Contact
               </Link>
+            </li>
+            <li>
+              <button onClick={handleLogout} className="rounded-lg bg-red-500 hover:bg-red-700 hover:text-gray-200 px-2 py-[4px]">Log Out</button>
             </li>
           </ul>
         </div>

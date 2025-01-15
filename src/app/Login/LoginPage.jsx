@@ -47,7 +47,7 @@ const LoginPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black"
             />
           </div>
           <div className="mb-6">
@@ -71,7 +71,7 @@ const LoginPage = () => {
           </button>
         </form>
         <p className="text-gray-600 text-center mt-6">
-          Don't have an account? <a href="/Register" className="text-indigo-500 hover:underline">Sign up</a>
+          Don't have an account? <a href="/register" className="text-indigo-500 hover:underline">Sign up</a>
         </p>
       </div>
     </div>

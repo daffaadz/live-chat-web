@@ -33,7 +33,7 @@ const RegisterPage = () => {
 
   return (
     <div className="w-screen h-screen overflow-hidden flex justify-center items-center bg-gradient-to-tl from-green-400 to-blue-500">
-      <div className="w-1/3 p-8 bg-white rounded-lg shadow-lg">
+      <div className="md:w-1/3 min-w-72 p-8 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Register</h2>
         {message && <p className="text-center text-red-500 mb-4">{message}</p>}
         <form onSubmit={handleSubmit}>

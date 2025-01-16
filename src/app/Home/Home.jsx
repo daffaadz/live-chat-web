@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { database, ref, push, onValue } from "../../../../backend/firebase/firebase";
+import { database, ref, push, onValue } from "../../../backend/firebase/firebase";
 import ContactForm from "../../components/contactForm";
 import Navbar from "../../components/Navbar";
 

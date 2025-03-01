@@ -101,7 +101,7 @@ const Home = () => {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <div className="overflow-x-hidden overflow-y-hidden">
         {/* Tampilan Utama */}
         <div
@@ -234,56 +234,58 @@ const Home = () => {
             {/* Contact Form */}
             <ContactForm />
 
-            {/* Live Chat */}
-            <div
-              className="bg-gray-800 p-6 rounded-lg shadow-lg"
-              data-aos="fade-up"
-            >
-              <h3 className="text-2xl mb-4 font-bold">Live Chat</h3>
-              <div className="h-48 overflow-y-auto bg-gray-700 rounded-lg p-4 mb-4">
-                {messages.map((message, index) => (
-                  <div
-                    key={index}
-                    className={`mb-2 flex ${
-                      message.role === "user" ? "justify-end" : "justify-start"
-                    }`}
-                  >
-                    <span
-                      className={`px-4 py-2 rounded-lg ${
-                        message.role === "user"
+            <form action="" method="POST">
+              {/* Live Chat */}
+              <div
+                className="bg-gray-800 p-6 rounded-lg shadow-lg"
+                data-aos="fade-up"
+              >
+                <h3 className="text-2xl mb-4 font-bold">Live Chat</h3>
+                <div className="h-64 overflow-y-auto bg-gray-700 rounded-lg p-4 mb-4">
+                  {messages.map((message, index) => (
+                    <div
+                      key={index}
+                      className={`mb-2 flex ${message.role === "user" ? "justify-end" : "justify-start"
+                        }`}
+                    >
+                      <span
+                        className={`px-4 py-2 rounded-lg ${message.role === "user"
                           ? "bg-blue-600 text-white text-right"
                           : "bg-green-600 text-white text-left"
-                      }`}
-                    >
-                      {message.role === "admin" ? "[Admin] " : "[User] "}
-                      {message.text}
-                    </span>
-                  </div>
-                ))}
-                {isTyping && (
-                  <div className="mb-2 flex justify-start">
-                    <span className="px-4 py-2 rounded-lg bg-green-600 text-white">
-                      [Admin] Typing...
-                    </span>
-                  </div>
-                )}
+                          }`}
+                      >
+                        {message.role === "admin" ? "[Admin] " : "[User] "}
+                        {message.text}
+                      </span>
+                    </div>
+                  ))}
+                  {isTyping && (
+                    <div className="mb-2 flex justify-start">
+                      <span className="px-4 py-2 rounded-lg bg-green-600 text-white">
+                        [Admin] Typing...
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="flex">
+                  <input
+                    type="text"
+                    placeholder="Type a message"
+                    className="flex-grow px-4 py-2 rounded bg-gray-700 text-white mr-2"
+                    value={newMessage}
+                    onChange={(e) => setNewMessage(e.target.value)}
+                  />
+                  <button
+                    onClick={handleSendMessage}
+                    className="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-800"
+                  >
+                    Send
+                  </button>
+                </div>
               </div>
-              <div className="flex">
-                <input
-                  type="text"
-                  placeholder="Type a message"
-                  className="flex-grow px-4 py-2 rounded bg-gray-700 text-white mr-2"
-                  value={newMessage}
-                  onChange={(e) => setNewMessage(e.target.value)}
-                />
-                <button
-                  onClick={handleSendMessage}
-                  className="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-800"
-                >
-                  Send
-                </button>
-              </div>
-            </div>
+
+            </form>
+
           </div>
         </div>
       </div>
